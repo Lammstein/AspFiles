@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AspFiles.Models.Ruta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Importados</h1>
+
+<p>
+    <a asp-action="Create">Importar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Dirección de acceso
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => new System.IO.FileInfo(item.Rutadb).Name)
+                
+
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

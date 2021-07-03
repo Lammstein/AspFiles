@@ -1,0 +1,18 @@
+﻿@model AspFiles.Models.ViewModel.UploadModel
+@{
+  ViewData["Title"] = "Home Page";
+}
+<p>@ViewBag.message</p>
+<div class="text-center">
+    <h1 class="display-4">Archivos del sistema</h1><br /><br />
+    <form asp-controller="Home" asp-action="Upload2" enctype="multipart/form-data" method="post">
+        
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Da clic para seleccionar un archivo</label>
+            <input class="form-control" asp-for="MyFile" type="file" id="formFile">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Cargar" />
+    </form>
+
+    
+</div>
